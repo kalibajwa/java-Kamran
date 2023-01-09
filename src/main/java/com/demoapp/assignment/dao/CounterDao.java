@@ -19,7 +19,7 @@ public class CounterDao {
      * @param name
      * @return Counter
      */
-    public Counter increment(String name) {
+    public synchronized Counter increment(String name) {
         for (Counter counter: counterList){
             if(counter.getName().equals(name)){
                 int newCount = counter.getCount() + 1;
@@ -35,7 +35,7 @@ public class CounterDao {
      * @param counter
      * @return Counter
      */
-    public Counter save(Counter counter) {
+    public synchronized Counter save(Counter counter) {
         boolean alreadExists = false;
         for (Counter c: counterList){
             if(c.getName().equals(counter.getName())){
