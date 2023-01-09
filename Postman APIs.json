@@ -1,0 +1,328 @@
+{
+	"info": {
+		"_postman_id": "8e95b18d-cc16-43dc-a776-6c7b524f1e22",
+		"name": "Postman APIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "increment Counter",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"const local = \"http://localhost:8090/athletic\";",
+							"const test = \"https://mobile-api.test.magnushealth.net/athletic\";",
+							"const demo = \"https://mobile-api.test.magnushealth.net/athletic\";",
+							"const prod = \"https://mobile-api.magnushealthportal.com/athletic\";",
+							"",
+							"",
+							"pm.variables.set(\"apiBase\", prod);"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"{{loginUsername}}\",\n    \"password\": \"{{loginPassword}}\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/counter-management/counters/dumy333/increment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"counter-management",
+						"counters",
+						"dumy333",
+						"increment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getCounter",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"const local = \"http://localhost:8090/athletic\";",
+							"const test = \"https://mobile-api.test.magnushealth.net/athletic\";",
+							"const demo = \"https://mobile-api.test.magnushealth.net/athletic\";",
+							"const prod = \"https://mobile-api.magnushealthportal.com/athletic\";",
+							"",
+							"",
+							"pm.variables.set(\"apiBase\", prod);"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"{{loginUsername}}\",\n    \"password\": \"{{loginPassword}}\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/counter-management/counters/dumy44",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"counter-management",
+						"counters",
+						"dumy44"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllCounter",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"const local = \"http://localhost:8090/athletic\";",
+							"const test = \"https://mobile-api.test.magnushealth.net/athletic\";",
+							"const demo = \"https://mobile-api.test.magnushealth.net/athletic\";",
+							"const prod = \"https://mobile-api.magnushealthportal.com/athletic\";",
+							"",
+							"",
+							"pm.variables.set(\"apiBase\", prod);"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"{{loginUsername}}\",\n    \"password\": \"{{loginPassword}}\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/counter-management/counters",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"counter-management",
+						"counters"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create New Counter",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							" //Select which environment to use",
+							"const local = \"http://localhost:8090/athletic\";",
+							"//const test = \"https://mobile-api.test.magnushealth.net/athletic\";",
+							"//const demo = \"https://mobile-api.test.magnushealth.net/athletic\";",
+							"//const prod = \"https://mobile-api.magnushealthportal.com/athletic\";",
+							"",
+							"pm.collectionVariables.set(\"apiBase\", local);",
+							"",
+							"//Modify these values to change which user you are querying the api against",
+							"// pm.collectionVariables.set(\"loginUsername\", \"pdangelo\"); //SCH Admin",
+							"//pm.collectionVariables.set(\"loginUsername\", \"ButaDon\"); //PAR User",
+							"",
+							"//pm.collectionVariables.set(\"loginUsername\", \"capepar4\"); //PAR User",
+							"pm.collectionVariables.set(\"loginUsername\", \"farhanadmin\"); //PAR User",
+							"// pm.collectionVariables.set(\"loginUsername\", \"Magnus@123!\"); //STU User",
+							"//pm.collectionVariables.set(\"loginPassword\", \"Pioneer@123!\");",
+							"pm.collectionVariables.set(\"loginPassword\", \"magnus00\");",
+							"//pm.collectionVariables.set(\"loginPassword\", \"Magnus@123!\");",
+							"",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const jsonData = JSON.parse(responseBody);\r",
+							"\r",
+							"pm.collectionVariables.set(\"token\", jsonData.token);\r",
+							"pm.collectionVariables.set(\"loginUserId\", jsonData.userId);\r",
+							"pm.collectionVariables.set(\"grpId\", jsonData.userGroupId);\r",
+							"pm.collectionVariables.set(\"isAdmin\", jsonData.isAdmin);\r",
+							"pm.collectionVariables.set(\"pkgCode\", jsonData.key);\r",
+							"pm.collectionVariables.set(\"loginRole\", jsonData.role);\r",
+							"pm.collectionVariables.set(\"affId\", jsonData.userAffiliationId);\r",
+							"\r",
+							"\r",
+							"tests[\"Status code is 200\"] = responseCode.code === 200;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Auth-Token",
+						"value": "{{token}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "identity",
+						"value": "{{loginUsername}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"name\": \"dumy2\",\r\n        \"count\": 1\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/counter-management/counters",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"counter-management",
+						"counters"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "apiBase",
+			"value": ""
+		},
+		{
+			"key": "loginUsername",
+			"value": ""
+		},
+		{
+			"key": "loginPassword",
+			"value": ""
+		},
+		{
+			"key": "token",
+			"value": ""
+		},
+		{
+			"key": "loginUserId",
+			"value": ""
+		},
+		{
+			"key": "grpId",
+			"value": ""
+		},
+		{
+			"key": "isAdmin",
+			"value": ""
+		},
+		{
+			"key": "pkgCode",
+			"value": ""
+		},
+		{
+			"key": "loginRole",
+			"value": ""
+		},
+		{
+			"key": "affId",
+			"value": ""
+		}
+	]
+}
